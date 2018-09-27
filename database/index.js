@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 mongoose.connect('mongodb://david:password1234@ds111113.mlab.com:11113/spotify-header');
 
 const db = mongoose.connection;
+
 db.on('error', error => {
   console.error(error);
 });
@@ -25,6 +26,7 @@ const headerDBSchema = new mongoose.Schema({
 });
 
 const HeaderDB = mongoose.model('HeaderDB', headerDBSchema);
+
 module.exports = HeaderDB;
 
 // NOTE: To be used later
